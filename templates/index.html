@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juice Quality Prediction</title>
+    <link rel="stylesheet" href="static/styles.css">
+
+</head>
+<body>
+    <form id="prediction-form">
+        <h1>Juice Quality Prediction</h1>
+
+        <!-- Dropdowns for Company, Flavor, and Label -->
+        <div class="dropdown-grid">
+            <div>
+                <label for="Company">Company:</label>
+                <select id="Company" name="Company">
+                    <option value="Real">Real</option>
+                    <option value="Paper Boat">Paper Boat</option>
+                    <option value="Tropicana">Tropicana</option>
+                    <option value="Alo Frut">Alo Frut</option>
+                    <option value="Minute Maid">Minute Maid</option>
+                    <option value="Frooti">Frooti</option>
+                    <option value="Pran Litchi">Pran Litchi</option>
+                    <option value="Slice">Slice</option>
+                    <option value="B-Natural">B-Natural</option>
+                    <option value="Maaza">Maaza</option>
+                    <option value="Safal">Safal</option>
+                    <option value="Del Monte">Del Monte</option>
+                    <option value="Raw pressery">Raw pressery</option>
+                    <option value="Patanjali">Patanjali</option>
+                    <option value="Kapiva">Kapiva</option>
+                    <option value="Ceres">Ceres</option>
+                    <option value="24 Mantra Organic">24 Mantra Organic</option>
+                    <option value="Welch's">Welch's</option>
+                    <option value="Grand Juice">Grand Juice</option>
+                    <option value="Kissan">Kissan</option>
+                </select>
+            </div>
+            <div>
+                <label for="Flavor">Flavor:</label>
+                <select id="Flavor" name="Flavor">
+                    <option value="Orange">Orange</option>
+                    <option value="Pomegranate">Pomegranate</option>
+                    <option value="Guava">Guava</option>
+                    <option value="Litchi">Litchi</option>
+                    <option value="Mango">Mango</option>
+                    <option value="Mixed Fruit">Mixed Fruit</option>
+                    <option value="Cranberry">Cranberry</option>
+                    <option value="Mosambi">Mosambi</option>
+                    <option value="Pineapple">Pineapple</option>
+                    <option value="Lemon">Lemon</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Grape">Grape</option>
+                    <option value="Papaya">Papaya</option>
+                    <option value="Aamras">Aamras</option>
+                    <option value="Jaljeera">Jaljeera</option>
+                    <option value="Kokum">Kokum</option>
+                    <option value="Aam Panna">Aam Panna</option>
+                    <option value="Amla">Amla</option>
+                    <option value="Aloe Vera">Aloe Vera</option>
+                    <option value="Giloy">Giloy</option>
+                    <option value="Coconut water">Coconut water</option>
+                    <option value="Watermelon">Watermelon</option>
+                    <option value="Carrot">Carrot</option>
+                </select>
+            </div>
+            <div>
+                <label for="Label">Label (Age Group):</label>
+                <select id="Label" name="Label">
+                    <option value="child">Child</option>
+                    <option value="adult">Adult</option>
+                    <option value="elderly">Elderly</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Attributes and their deviations in pairs -->
+        <div class="grid-container">
+            <div>
+                <label for="pH">pH:</label>
+                <input type="number" id="pH" name="pH" step="0.01" placeholder="4.49">
+            </div>
+            <div>
+                <label for="pH deviation">pH Deviation:</label>
+                <input type="number" id="pH deviation" name="pH deviation" step="0.01" placeholder="1.49">
+            </div>
+
+            <div>
+                <label for="Sugar(g)">Sugar (g):</label>
+                <input type="number" id="Sugar(g)" name="Sugar(g)" step="0.01" placeholder="12">
+            </div>
+            <div>
+                <label for="Sugar deviation">Sugar Deviation:</label>
+                <input type="number" id="Sugar deviation" name="Sugar deviation" step="0.01" placeholder="2">
+            </div>
+
+            <div>
+                <label for="Antioxidants(%)">Antioxidants (%):</label>
+                <input type="number" id="Antioxidants(%)" name="Antioxidants(%)" step="0.01" placeholder="85.93">
+            </div>
+            <div>
+                <label for="Antioxidant deviation(%)">Antioxidant Deviation (%):</label>
+                <input type="number" id="Antioxidant deviation(%)" name="Antioxidant deviation(%)" step="0.01" placeholder="15.93">
+            </div>
+
+            <div>
+                <label for="Carbohydrates(g)">Carbohydrates (g):</label>
+                <input type="number" id="Carbohydrates(g)" name="Carbohydrates(g)" step="0.01" placeholder="15.4">
+            </div>
+            <div>
+                <label for="Carbohydrate deviation">Carbohydrate Deviation:</label>
+                <input type="number" id="Carbohydrate deviation" name="Carbohydrate deviation" step="0.01" placeholder="4.9">
+            </div>
+
+            <div>
+                <label for="Potassium(mg)">Potassium (mg):</label>
+                <input type="number" id="Potassium(mg)" name="Potassium(mg)" step="0.01" placeholder="237">
+            </div>
+            <div>
+                <label for="Potassium deviation">Potassium Deviation:</label>
+                <input type="number" id="Potassium deviation" name="Potassium deviation" step="0.01" placeholder="12">
+            </div>
+
+            <div>
+                <label for="Vitamin C(mg)">Vitamin C (mg):</label>
+                <input type="number" id="Vitamin C(mg)" name="Vitamin C(mg)" step="0.01" placeholder="40">
+            </div>
+            <div>
+                <label for="Vitamin C deviation">Vitamin C Deviation:</label>
+                <input type="number" id="Vitamin C deviation" name="Vitamin C deviation" step="0.01" placeholder="10">
+            </div>
+
+            <div>
+                <label for="Protein(g)">Protein (g):</label>
+                <input type="number" id="Protein(g)" name="Protein(g)" step="0.01" placeholder="1">
+            </div>
+            <div>
+                <label for="protein deviation">Protein Deviation:</label>
+                <input type="number" id="protein deviation" name="protein deviation" step="0.01" placeholder="0.15">
+            </div>
+
+            <div>
+                <label for="TVC: 10^2(CFU/ml)">TVC (CFU/ml):</label>
+                <input type="number" id="TVC: 10^2(CFU/ml)" name="TVC: 10^2(CFU/ml)" step="1" placeholder="100">
+            </div>
+            <div>
+                <label for="TVC deviation">TVC Deviation:</label>
+                <input type="number" id="TVC deviation" name="TVC deviation" step="0.01" placeholder="50">
+            </div>
+        </div>
+
+        <div>
+            <label for="Storage condition">Storage Condition:</label>
+            <select id="Storage condition" name="Storage condition">
+                <option value="cool">Cool</option>
+                <option value="ambient">Ambient</option>
+                <option value="frozen">Frozen</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="submitForm()">Predict Quality</button>
+    </form>
+
+            <div id="overlay"></div>
+        <div class="popup" id="result-popup">
+            <span id="result-text"></span>
+        </div>
+
+   <script>
+    function submitForm() {
+        const form = document.getElementById('prediction-form');
+        form.querySelectorAll('input').forEach(input => {
+            if (input.value === '') {
+                input.value = input.placeholder;
+            }
+        });
+    
+        const formData = new FormData(form);
+    
+        fetch('/predict', {
+            method: 'POST',
+            body: new URLSearchParams(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            showPopup(data.prediction);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    
+    function showPopup(result) {
+        const popup = document.getElementById('result-popup');
+        const overlay = document.getElementById('overlay');
+        const resultText = document.getElementById('result-text');
+    
+        // Set the text based on the result
+        resultText.textContent = result;
+    
+        // Apply the correct style based on the result
+        if (result.toLowerCase() === 'good') {
+            popup.classList.add('good');
+            popup.classList.remove('bad');
+        } else {
+            popup.classList.add('bad');
+            popup.classList.remove('good');
+        }
+    
+        // Show the popup and blur the background
+        popup.style.display = 'block';
+        overlay.style.display = 'block';
+    
+        // Close the popup when clicking outside of it
+        overlay.addEventListener('click', closePopup);
+    }
+    
+    function closePopup() {
+        const popup = document.getElementById('result-popup');
+        const overlay = document.getElementById('overlay');
+        popup.style.display = 'none';
+        overlay.style.display = 'none';
+    
+        // Remove the event listener to prevent memory leaks
+        overlay.removeEventListener('click', closePopup);
+    }
+    
+   </script>
+</body>
+</html>
+
