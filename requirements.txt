@@ -1,6 +1,4 @@
-Flask==2.0.1
+Flask==2.1.1
+Werkzeug==2.1.2
 pandas==1.5.3
 scikit_learn==1.2.1
-flask-wtf==1.0.0
-WTForms==2.3.3
-Werkzeug==2.0.1
